@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DeathClient — клиент для Minecraft</title>
+<style>
+:root{--bg:#0b0b10;--surface:#14141c;--text:#ecebf3;--muted:#9a99ad;--accent:#e5384f;--accent2:#7c3aed;--border:#26263a;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f6f5fa;--surface:#fff;--text:#16151f;--muted:#5d5c70;--border:#dedcea;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f6f5fa;--surface:#fff;--text:#16151f;--muted:#5d5c70;--border:#dedcea;color-scheme:light}
+:root[data-theme="dark"]{--bg:#0b0b10;--surface:#14141c;--text:#ecebf3;--muted:#9a99ad;--border:#26263a;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-weight:800;letter-spacing:.5px;font-size:20px}.logo b{color:var(--accent)}
+nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+.hero{text-align:center;padding:64px 0 48px}
+.badge{display:inline-block;border:1px solid var(--border);border-radius:99px;padding:4px 14px;font-size:13px;color:var(--muted);background:var(--surface)}
+h1{font-size:clamp(38px,9vw,68px);line-height:1.05;margin:20px 0 14px;letter-spacing:-1px}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:560px;margin:0 auto 28px;font-size:18px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:13px 26px;border-radius:12px;text-decoration:none;font-weight:600;border:1px solid var(--border);color:var(--text);background:var(--surface)}
+.btn.p{background:linear-gradient(90deg,var(--accent),var(--accent2));border:0;color:#fff}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:40px 0}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center}
+.stat b{display:block;font-size:30px;color:var(--accent)}.stat span{color:var(--muted);font-size:14px}
+h2{font-size:28px;margin:56px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px}
+.card h3{margin:0 0 6px;font-size:19px}.card p{margin:0 0 12px;color:var(--muted);font-size:14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags i{font-style:normal;font-size:12px;padding:3px 10px;border-radius:99px;border:1px solid var(--border);color:var(--muted)}
+.steps{counter-reset:s;display:grid;gap:12px}
+.steps div{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px 16px 56px;position:relative}
+.steps div::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:14px;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+footer{margin:64px 0 28px;padding-top:20px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;text-align:center}
+@media(max-width:520px){.stats{grid-template-columns:1fr}nav a{margin-left:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><div class="logo">Death<b>Client</b></div><div><a href="#features">Функции</a><a href="#install">Установка</a></div></nav>
+
+<section class="hero">
+<span class="badge">Версия v49 · Fabric</span>
+<h1>Играй <span>без границ</span></h1>
+<p>DeathClient — клиент для Minecraft с 108 модулями: бой, движение, визуал, HUD и многое другое.</p>
+<div class="btns"><a class="btn p" href="#install">Скачать</a><a class="btn" href="#features">Возможности</a></div>
+</section>
+
+<div class="stats">
+<div class="stat"><b>108</b><span>модулей</span></div>
+<div class="stat"><b>25</b><span>боевых функций</span></div>
+<div class="stat"><b>28</b><span>визуальных эффектов</span></div>
+</div>
+
+<h2 id="features">Возможности</h2>
+<div class="grid">
+<div class="card"><h3>⚔️ Combat · 25</h3><div class="tags"><i>AimAssist</i><i>AnchorAura</i><i>AntiBot</i><i>AutoCart</i><i>AutoPotion</i><i>AutoSwap</i><i>AutoTotem</i><i>ClickPearl</i><i>CrystalAura</i><i>CrystalOptimization</i><i>ElytraMace</i><i>ElytraTarget</i><i>Hitbox</i><i>InterruptHealing</i><i>ItemRelease</i><i>KillAura</i><i>MaceKiller</i><i>ProjectileHelper</i><i>ShieldBreaker</i><i>SpearDash</i><i>TargetStrafe</i><i>TpAura</i><i>TriggerBot</i><i>Velocity</i><i>XBow</i></div></div>
+<div class="card"><h3>🏃 Movement · 22</h3><div class="tags"><i>AirStuck</i><i>AutoJump</i><i>AutoSprint</i><i>Blink</i><i>DragonFly</i><i>ElytraBooster</i><i>ElytraHelper</i><i>ElytraJump</i><i>ElytraMotion</i><i>Fly</i><i>Freecam</i><i>GuiMove</i><i>NoClip</i><i>NoFall</i><i>NoPush</i><i>NoSlow</i><i>Rotate180</i><i>Scaffold</i><i>Speed</i><i>Spider</i><i>Spin</i><i>Strafe</i></div></div>
+<div class="card"><h3>🎨 Visuals · 28</h3><div class="tags"><i>Arrows</i><i>BlockEsp</i><i>Chams</i><i>ChinaHat</i><i>Crosshair</i><i>CustomFog</i><i>CustomModel</i><i>CustomSky</i><i>CustomTheme</i><i>DamageVignette</i><i>Emotions</i><i>Esp</i><i>Fov</i><i>Fullbright</i><i>GlassHand</i><i>GlowEsp</i><i>HitMarker</i><i>JumpCircle</i><i>KillEffects</i><i>NoRender</i><i>SpeedLines</i><i>SwingAnimation</i><i>TargetEspGhost</i><i>TargetEspImage</i><i>TargetEsp</i><i>Trails</i><i>ViewModel</i><i>VisualSpin</i></div></div>
+<div class="card"><h3>🧩 HUD · 14</h3><div class="tags"><i>ArmorHud</i><i>CompassHud</i><i>CustomHotbar</i><i>DynamicIsland</i><i>EffectsHud</i><i>FriendListHud</i><i>HudStyle</i><i>InfoHud</i><i>Keybinds</i><i>Keystrokes</i><i>SaturationViewer</i><i>TargetHud</i><i>TimeHud</i><i>Watermark</i></div></div>
+<div class="card"><h3>🖥️ GUI · 6</h3><div class="tags"><i>CustomFont</i><i>GlassMenu</i><i>GuiAnimation</i><i>GuiImage</i><i>GuiStyle</i><i>LiquidGlass</i></div></div>
+<div class="card"><h3>🛠️ Misc · 13</h3><div class="tags"><i>AutoLeave</i><i>AutoRespawn</i><i>AutoTool</i><i>BedWarsHelper</i><i>ChestStealer</i><i>ClientBadge</i><i>DeathCoords</i><i>ExtraOptimization</i><i>Friends</i><i>MiddleClickFriend</i><i>Optimization</i><i>Pending</i><i>ResourcePack</i></div></div>
+</div>
+
+<h2 id="install">Установка</h2>
+<div class="steps">
+<div>Установите Fabric Loader для вашей версии Minecraft.</div>
+<div>Скачайте DeathClient и положите .jar в папку <code>mods</code>.</div>
+<div>Запустите игру и откройте меню клиента.</div>
+</div>
+<div class="btns" style="margin-top:24px"><a class="btn p" href="#">Скачать DeathClient v49</a></div>
+
+<footer>© 2026 DeathClient. Не связан с Mojang и Microsoft. Используйте на свой риск и только там, где это разрешено правилами сервера.</footer>
+</div>
+</body>
+</html>
